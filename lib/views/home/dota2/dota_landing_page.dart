@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:mobile_finals_rest_api/views/home/dota2/widgets/custom_buttons.dart';
+import 'package:mobile_finals_rest_api/views/home/dota2/dota_heroes.dart';
 
 class Dota2LandingPage extends StatelessWidget {
   const Dota2LandingPage({Key? key}) : super(key: key);
@@ -36,12 +36,40 @@ class Dota2LandingPage extends StatelessWidget {
             ),
           ),
           SizedBox(height: 30),
-          CustomButtons(
-            name: "View Heroes",
+          Container(
+            height: 50.0,
+            width: 300,
+            child: ElevatedButton(
+              onPressed: () {
+                Get.to(DotaHeroes());
+              },
+              child: Text(
+                "View Heroes",
+              ),
+              style: ElevatedButton.styleFrom(
+                  primary: Colors.grey[800],
+                  textStyle: TextStyle(
+                      color: Colors.white,
+                      fontSize: 15,
+                      fontWeight: FontWeight.bold)),
+            ),
           ),
           SizedBox(height: 20),
-          CustomButtons(
-            name: "View Items",
+          Container(
+            height: 50.0,
+            width: 300,
+            child: ElevatedButton(
+              onPressed: () {},
+              child: Text(
+                "View Items",
+              ),
+              style: ElevatedButton.styleFrom(
+                  primary: Colors.grey[800],
+                  textStyle: TextStyle(
+                      color: Colors.white,
+                      fontSize: 15,
+                      fontWeight: FontWeight.bold)),
+            ),
           ),
           SizedBox(height: 100),
         ],
