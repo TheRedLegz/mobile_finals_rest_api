@@ -1,4 +1,4 @@
-# mobile_finals_rest_api
+# Summer 2021 Mobiles - Finals Project
 
 A new Flutter project.
 
