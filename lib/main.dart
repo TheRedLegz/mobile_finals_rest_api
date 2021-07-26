@@ -1,11 +1,20 @@
 import 'package:flutter/material.dart';
-import 'package:get/route_manager.dart';
+import 'package:mobile_finals_rest_api/views/home/home.dart';
+// import 'package:get/get.dart';
 
 class Main extends StatelessWidget {
   const Main({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
+    return MaterialApp(
+      title: 'Game Data Tracker',
+      theme: ThemeData(
+        primarySwatch: Colors.blue,
+        visualDensity: VisualDensity.adaptivePlatformDensity,
+      ),
+      debugShowCheckedModeBanner: false,
+      home: HomeScreen(),
     return GetMaterialApp(
       home: TestWidget(),
     );
