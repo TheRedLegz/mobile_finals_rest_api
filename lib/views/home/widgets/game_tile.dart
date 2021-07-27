@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 // import 'package:get/get.dart';
 
-class GameTileDota2 extends StatelessWidget {
-  // final Product product;
-
-  // ProductTile(this.product);
+class GameTile extends StatelessWidget {
+  final String imagePath;
+  final Widget landingPage;
+  GameTile({required this.imagePath, required this.landingPage});
 
   @override
   Widget build(BuildContext context) {
@@ -30,8 +31,10 @@ class GameTileDota2 extends StatelessWidget {
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(4),
                       ),
-                      child: Image.asset('images/dota2.jpg')),
-                  onPressed: () {},
+                      child: Image.asset(this.imagePath)),
+                  onPressed: () {
+                    Get.to(this.landingPage);
+                  },
                 ),
               ],
             ),
