@@ -4,7 +4,8 @@
 
 import 'dart:convert';
 
-List<DotaItemData> dotaItemDataFromJson(String str) => List<DotaItemData>.from(json.decode(str).map((x) => DotaItemData.fromJson(x)));
+List<DotaItemData> dotaItemDataListFromJson(String str) => List<DotaItemData>.from(json.decode(str).map((x) => DotaItemData.fromJson(x)));
+DotaItemData dotaItemDataFromJson(String str) => DotaItemData.fromJson(json.decode(str));
 
 String dotaItemDataToJson(List<DotaItemData> data) => json.encode(List<dynamic>.from(data.map((x) => x.toJson())));
 
