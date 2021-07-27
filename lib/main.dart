@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'home/home.dart';
+import 'package:mobile_finals_rest_api/views/home/home.dart';
 // import 'package:get/get.dart';
 
 void main() {
