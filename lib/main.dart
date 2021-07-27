@@ -4,7 +4,6 @@ import 'package:mobile_finals_rest_api/controllers/dota/dota_hero_list_controlle
 import 'package:mobile_finals_rest_api/models/dota_models/dota_hero_data.dart';
 import 'package:mobile_finals_rest_api/services/test_service.dart';
 import 'package:mobile_finals_rest_api/views/home/home.dart';
-// import 'package:get/get.dart';
 
 void main() => runApp(MainApp());
 
@@ -25,6 +24,7 @@ class MainApp extends StatelessWidget {
   }
 }
 
+// To be removed in final build
 class TestScreen extends StatelessWidget {
   final DotaHeroListController _heroListController =
       Get.put(DotaHeroListController());
@@ -33,6 +33,7 @@ class TestScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(),
       body: Center(
         child: Container(
           height: MediaQuery.of(context).size.height,
