@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:mobile_finals_rest_api/views/home/widgets%20copy/game_tile_csgo.dart';
-import 'package:mobile_finals_rest_api/views/home/widgets%20copy/game_tile_dota2.dart';
+import 'package:mobile_finals_rest_api/views/home/widgets/game_tile_csgo.dart';
+import 'package:mobile_finals_rest_api/views/home/widgets/game_tile_dota2.dart';
 // import 'package:get/get.dart';
 
 class HomeScreen extends StatelessWidget {
