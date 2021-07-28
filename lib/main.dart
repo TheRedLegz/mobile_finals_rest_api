@@ -53,20 +53,23 @@ class TestScreen extends StatelessWidget {
               ),
               Expanded(
                 child: Obx(
-                  () => _heroListController.isLoading.value ? Center(child:CircularProgressIndicator()) : ListView.builder(
-                    itemCount: _heroListController.heroList.length,
-                    itemBuilder: (BuildContext context, int index) {
-                      return ListTile(
-                        leading: CircleAvatar(
-                          backgroundColor: Colors.white,
-                          backgroundImage: NetworkImage(
-                              _heroListController.heroList[index].imageUrl),
+                  () => _heroListController.isLoading.value
+                      ? Center(child: CircularProgressIndicator())
+                      : ListView.builder(
+                          itemCount: _heroListController.heroList.length,
+                          itemBuilder: (BuildContext context, int index) {
+                            return ListTile(
+                              leading: CircleAvatar(
+                                backgroundColor: Colors.white,
+                                backgroundImage: NetworkImage(
+                                    _heroListController
+                                        .heroList[index].imageUrl),
+                              ),
+                              title: Text(
+                                  "${_heroListController.heroList[index].localizedName}"),
+                            );
+                          },
                         ),
-                        title: Text(
-                            "${_heroListController.heroList[index].localizedName}"),
-                      );
-                    },
-                  ),
                 ),
               ),
             ],
