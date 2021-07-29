@@ -4,8 +4,8 @@
 
 import 'dart:convert';
 
-List<CsgoWeaponData> csgoWeaponDataFromJson(String str) => List<CsgoWeaponData>.from(json.decode(str).map((x) => CsgoWeaponData.fromJson(x)));
-
+List<CsgoWeaponData> csgoWeaponDataListFromJson(String str) => List<CsgoWeaponData>.from(json.decode(str).map((x) => CsgoWeaponData.fromJson(x)));
+CsgoWeaponData csgoWeaponDataFromJson(String str) => CsgoWeaponData.fromJson(json.decode(str));
 String csgoWeaponDataToJson(List<CsgoWeaponData> data) => json.encode(List<dynamic>.from(data.map((x) => x.toJson())));
 
 class CsgoWeaponData {
