@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:mobile_finals_rest_api/controllers/dota/dota_hero_list_controller.dart';
+import 'package:mobile_finals_rest_api/controllers/csgo/csgo_weapon_list_controller.dart';
+import 'package:mobile_finals_rest_api/controllers/dota/dota_item_list_controller.dart';
 import 'package:mobile_finals_rest_api/models/dota_models/dota_hero_data.dart';
 import 'package:mobile_finals_rest_api/services/test_service.dart';
 import 'package:mobile_finals_rest_api/views/home/home.dart';
@@ -26,8 +27,8 @@ class MainApp extends StatelessWidget {
 
 // To be removed in final build
 class TestScreen extends StatelessWidget {
-  final DotaHeroListController _heroListController =
-      Get.put(DotaHeroListController());
+  final DotaItemListController _heroListController =
+      Get.put(DotaItemListController());
   TestScreen({Key? key}) : super(key: key);
 
   @override
@@ -44,7 +45,7 @@ class TestScreen extends StatelessWidget {
               SizedBox(height: 10.0),
               ElevatedButton(
                 onPressed: () async {
-                  var res = await TestService.fetchHeroList();
+                  var res = await TestService.fetchDotaHeroList();
                   dotaHeroDataListFromJson(res).forEach((hero) {
                     print(hero.name);
                   });
@@ -56,17 +57,23 @@ class TestScreen extends StatelessWidget {
                   () => _heroListController.isLoading.value
                       ? Center(child: CircularProgressIndicator())
                       : ListView.builder(
-                          itemCount: _heroListController.heroList.length,
+                          itemCount: _heroListController.dotaItemList.length,
                           itemBuilder: (BuildContext context, int index) {
                             return ListTile(
-                              leading: CircleAvatar(
-                                backgroundColor: Colors.white,
-                                backgroundImage: NetworkImage(
-                                    _heroListController
-                                        .heroList[index].imageUrl),
-                              ),
+                              leading: _heroListController
+                                          .dotaItemList[index].imageUrl ==
+                                      null
+                                  ? CircleAvatar(
+                                      backgroundColor: Colors.white,
+                                    )
+                                  : CircleAvatar(
+                                      backgroundColor: Colors.white,
+                                      backgroundImage: NetworkImage(
+                                          _heroListController
+                                              .dotaItemList[index].imageUrl),
+                                    ),
                               title: Text(
-                                  "${_heroListController.heroList[index].localizedName}"),
+                                  "${_heroListController.dotaItemList[index].name}"),
                             );
                           },
                         ),
