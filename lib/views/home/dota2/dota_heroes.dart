@@ -51,7 +51,8 @@ class DotaHeroes extends StatelessWidget {
                   IconButton(
                     icon: Icon(Icons.refresh),
                     onPressed: () async {
-                      var res = await TestService.fetchHeroList();
+                      // User controller here
+                      var res = await TestService.fetchDotaHeroList();
                       dotaHeroDataListFromJson(res).forEach((hero) {
                         print(hero.name);
                       });
@@ -67,10 +68,10 @@ class DotaHeroes extends StatelessWidget {
                           crossAxisCount: 2,
                           crossAxisSpacing: 16,
                           mainAxisSpacing: 16,
-                          itemCount: _heroListController.heroList.length,
+                          itemCount: _heroListController.dotaHeroList.length,
                           itemBuilder: (BuildContext context, int index) {
                             return DotaHeroesCard(
-                                _heroListController.heroList[index]);
+                                _heroListController.dotaHeroList[index]);
                           },
                           staggeredTileBuilder: (index) => StaggeredTile.fit(1),
                         ),
