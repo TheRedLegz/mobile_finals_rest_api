@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:mobile_finals_rest_api/main.dart';
 import 'package:mobile_finals_rest_api/views/home/widgets/game_tile.dart';
 
+import 'csgo/csgo_landing_page.dart';
 import 'dota2/dota_landing_page.dart';
 // import 'package:get/get.dart';
 
@@ -20,8 +21,14 @@ class HomeScreen extends StatelessWidget {
         mainAxisSpacing: 10.0,
         shrinkWrap: true,
         children: [
-          GameTile(imagePath: 'images/dota2.jpg', landingPage: Dota2LandingPage(),),
-          GameTile(imagePath: 'images/csgo.png', landingPage: TestScreen(),),
+          GameTile(
+            imagePath: 'images/dota2.jpg',
+            landingPage: Dota2LandingPage(),
+          ),
+          GameTile(
+            imagePath: 'images/csgo.png',
+            landingPage: CSGOLandingPage(),
+          ),
         ],
       ),
     );
