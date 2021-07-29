@@ -3,7 +3,7 @@ import 'package:mobile_finals_rest_api/models/dota_models/dota_hero_data.dart';
 import 'package:mobile_finals_rest_api/services/test_service.dart';
 
 class DotaHeroListController extends GetxController {
-  var heroList = [].obs;
+  var dotaHeroList = [].obs;
   RxBool isLoading = true.obs;
 
   void onInit() {
@@ -12,9 +12,9 @@ class DotaHeroListController extends GetxController {
   }
 
   void fetchDotaHeroList() async {
-    var responseBody = await TestService.fetchHeroList();
+    var responseBody = await TestService.fetchDotaHeroList();
     isLoading.value = false;
-    heroList.value = dotaHeroDataListFromJson(responseBody);
+    dotaHeroList.value = dotaHeroDataListFromJson(responseBody);
     
   }
 }
