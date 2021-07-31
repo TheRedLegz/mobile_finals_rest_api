@@ -1,14 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:mobile_finals_rest_api/controllers/csgo/csgo_match_list_controller.dart';
-import 'package:mobile_finals_rest_api/models/csgo_models/csgo_match_data.dart';
+import 'package:mobile_finals_rest_api/controllers/dota/dota_match_list_controller.dart';
+import 'package:mobile_finals_rest_api/models/dota_models/dota_match_data.dart';
 import 'package:mobile_finals_rest_api/services/test_service.dart';
-import 'package:mobile_finals_rest_api/views/home/csgo/widgets/matches_card.dart';
+import 'package:mobile_finals_rest_api/views/home/dota2/widgets/matches_card.dart';
 
-class CsgoMatches extends StatelessWidget {
-  final CsgoMatchListController _matchListController =
-      Get.put(CsgoMatchListController());
-  CsgoMatches({Key? key}) : super(key: key);
+class DotaMatches extends StatelessWidget {
+  final DotaMatchListController _matchListController = Get.put(DotaMatchListController());
+  DotaMatches({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -52,8 +51,8 @@ class CsgoMatches extends StatelessWidget {
                     IconButton(
                       icon: Icon(Icons.refresh),
                       onPressed: () async {
-                        var res = await TestService.fetchCsgoMatchList();
-                        csgoMatchDataFromJson(res).forEach((match) {
+                        var res = await TestService.fetchDotaMatchList();
+                        dotaMatchDataFromJson(res).forEach((match) {
                           print(match.name);
                         });
                       },
@@ -68,10 +67,10 @@ class CsgoMatches extends StatelessWidget {
                             scrollDirection: Axis.vertical,
                             shrinkWrap: true,
                             itemCount:
-                                _matchListController.csgoMatchList.length,
+                                _matchListController.dotaMatchList.length,
                             itemBuilder: (BuildContext context, int index) {
-                              return CsgoMatchCard(
-                                  _matchListController.csgoMatchList[index]);
+                              return DotaMatchCard(
+                                  _matchListController.dotaMatchList[index]);
                             },
                           ),
                   ),

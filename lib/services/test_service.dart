@@ -22,7 +22,17 @@ class TestService {
     return response.body;
   }
 
+  static Future<String> fetchCsgoMatchList() async {
+    var response = await http.get(Uri.parse(
+        "https://api.pandascore.co/csgo/matches?token=TfBqN1OTQ1YYqN2DTsZovyJsY4uvp4kRwRESiHbdFiKRdgBaEcs"));
+    return response.body;
+  }
   
+  static Future<String> fetchDotaMatchList() async {
+    var response = await http.get(Uri.parse(
+        "https://api.pandascore.co/dota2/matches?token=TfBqN1OTQ1YYqN2DTsZovyJsY4uvp4kRwRESiHbdFiKRdgBaEcs"));
+    return response.body;
+  }
 
 // Future<HeroModel> fetchHeroById(String heroId) async {
 //   var response = await http.get(Uri.parse("https://api.pandascore.co/dota2/heroes/$heroId?token=TfBqN1OTQ1YYqN2DTsZovyJsY4uvp4kRwRESiHbdFiKRdgBaEcs"));
