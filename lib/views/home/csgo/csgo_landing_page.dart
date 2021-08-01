@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:mobile_finals_rest_api/views/home/csgo/csgo_matches.dart';
+import 'package:mobile_finals_rest_api/views/home/csgo/csgo_players.dart';
 import 'package:mobile_finals_rest_api/views/home/csgo/csgo_teams.dart';
 import 'package:mobile_finals_rest_api/views/home/csgo/csgo_weapons.dart';
 
@@ -61,7 +62,9 @@ class CSGOLandingPage extends StatelessWidget {
             height: 50.0,
             width: 300,
             child: ElevatedButton(
-              onPressed: () {},
+              onPressed: () {
+                Get.to(() => CsgoPlayers());
+              },
               child: Text(
                 "View Players",
                 style: TextStyle(color: Colors.amber),

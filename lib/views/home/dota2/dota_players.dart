@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:mobile_finals_rest_api/controllers/csgo/csgo_player_list_controller.dart';
+import 'package:mobile_finals_rest_api/controllers/dota/dota_player_list_controller.dart';
 import 'package:mobile_finals_rest_api/models/pandascore_models/player_data.dart';
 import 'package:mobile_finals_rest_api/services/test_service.dart';
-import 'package:mobile_finals_rest_api/views/home/csgo/widgets/csplayers_card.dart';
+import 'package:mobile_finals_rest_api/views/home/dota2/widgets/players_card.dart';
 
-class CsgoPlayers extends StatelessWidget {
-  final CsgoPlayerListController _csplayerListController =
-      Get.put(CsgoPlayerListController());
-  CsgoPlayers({Key? key}) : super(key: key);
+class DotaPlayers extends StatelessWidget {
+  final DotaPlayerListController _playerListController =
+      Get.put(DotaPlayerListController());
+  DotaPlayers({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -52,7 +52,7 @@ class CsgoPlayers extends StatelessWidget {
                     IconButton(
                       icon: Icon(Icons.refresh),
                       onPressed: () async {
-                        var res = await TestService.fetchCsgoPlayerList();
+                        var res = await TestService.fetchDotaPlayerList();
                         playerDataListFromJson(res).forEach((match) {
                           print(match.name);
                         });
@@ -62,16 +62,16 @@ class CsgoPlayers extends StatelessWidget {
                 ),
                 Expanded(
                   child: Obx(
-                    () => _csplayerListController.isLoading.value
+                    () => _playerListController.isLoading.value
                         ? Center(child: CircularProgressIndicator())
                         : ListView.builder(
                             scrollDirection: Axis.vertical,
                             shrinkWrap: true,
                             itemCount:
-                                _csplayerListController.csgoPlayerList.length,
+                                _playerListController.dotaPlayerList.length,
                             itemBuilder: (BuildContext context, int index) {
-                              return CsgoPlayersCard(_csplayerListController
-                                  .csgoPlayerList[index]);
+                              return DotaPlayersCard(
+                                  _playerListController.dotaPlayerList[index]);
                             },
                           ),
                   ),
