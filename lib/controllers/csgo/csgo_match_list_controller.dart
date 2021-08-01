@@ -8,10 +8,11 @@ class CsgoMatchListController extends GetxController {
 
   void onInit() {
     super.onInit();
-    fetchMatchItemList();
+    fetchMatchList();
   }
 
-  void fetchMatchItemList() async {
+  void fetchMatchList() async {
+    isLoading.value = true;
     var responseBody = await TestService.fetchCsgoMatchList();
     isLoading.value = false;
     csgoMatchList.value = csgoMatchDataFromJson(responseBody);

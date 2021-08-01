@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:mobile_finals_rest_api/controllers/csgo/csgo_match_list_controller.dart';
-import 'package:mobile_finals_rest_api/models/csgo_models/csgo_match_data.dart';
-import 'package:mobile_finals_rest_api/services/test_service.dart';
 import 'package:mobile_finals_rest_api/views/home/csgo/widgets/matches_card.dart';
 
 class CsgoMatches extends StatelessWidget {
@@ -52,10 +50,7 @@ class CsgoMatches extends StatelessWidget {
                     IconButton(
                       icon: Icon(Icons.refresh),
                       onPressed: () async {
-                        var res = await TestService.fetchCsgoMatchList();
-                        csgoMatchDataFromJson(res).forEach((match) {
-                          print(match.name);
-                        });
+                        _matchListController.fetchMatchList();
                       },
                     ),
                   ],

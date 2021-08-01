@@ -12,6 +12,7 @@ class DotaItemListController extends GetxController {
   }
 
   void fetchDotaItemList() async {
+    isLoading.value = true;
     var responseBody = await TestService.fetchDotaItemList();
     isLoading.value = false;
     dotaItemList.value = dotaItemDataListFromJson(responseBody);

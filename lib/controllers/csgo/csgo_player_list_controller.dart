@@ -12,6 +12,7 @@ class CsgoPlayerListController extends GetxController {
   }
 
   void fetchCsgoPlayerList() async {
+    isLoading.value = true;
     var responseBody = await TestService.fetchCsgoPlayerList();
     isLoading.value = false;
     csgoWeaponList.value = playerDataListFromJson(responseBody);

@@ -8,10 +8,11 @@ class DotaMatchListController extends GetxController {
 
   void onInit() {
     super.onInit();
-    fetchMatchItemList();
+    fetchMatchList();
   }
 
-  void fetchMatchItemList() async {
+  void fetchMatchList() async {
+    isLoading.value = true;
     var responseBody = await TestService.fetchDotaMatchList();
     isLoading.value = false;
     dotaMatchList.value = dotaMatchDataFromJson(responseBody);

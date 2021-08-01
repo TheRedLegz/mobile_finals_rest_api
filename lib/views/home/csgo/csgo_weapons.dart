@@ -40,7 +40,7 @@ class CSGOWeaponPage extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.end,
                 children: [
                   Text(
-                    'Load Heroes',
+                    'Load Weapons',
                     style: TextStyle(
                       fontSize: 12,
                       fontWeight: FontWeight.w900,
@@ -49,11 +49,7 @@ class CSGOWeaponPage extends StatelessWidget {
                   IconButton(
                     icon: Icon(Icons.refresh),
                     onPressed: () async {
-                      // User controller here
-                      var res = await TestService.fetchDotaHeroList();
-                      dotaHeroDataListFromJson(res).forEach((hero) {
-                        print(hero.name);
-                      });
+                      _csgoWeaponlistController.fetchWeaponlist();
                     },
                   ),
                 ],
