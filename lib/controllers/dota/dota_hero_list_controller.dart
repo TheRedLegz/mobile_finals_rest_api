@@ -12,6 +12,7 @@ class DotaHeroListController extends GetxController {
   }
 
   void fetchDotaHeroList() async {
+    isLoading.value = true;
     var responseBody = await TestService.fetchDotaHeroList();
     isLoading.value = false;
     dotaHeroList.value = dotaHeroDataListFromJson(responseBody);

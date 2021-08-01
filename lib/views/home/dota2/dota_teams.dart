@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:mobile_finals_rest_api/controllers/csgo/csgo_team_list_controller.dart';
-import 'package:mobile_finals_rest_api/views/home/csgo/widgets/teams_card.dart';
+import 'package:mobile_finals_rest_api/controllers/dota/dota_team_list_controller.dart';
+import 'package:mobile_finals_rest_api/views/home/dota2/widgets/teams_card.dart';
 
-class CsgoTeams extends StatelessWidget {
-  final CsgoTeamListController _teamListController =
-      Get.put(CsgoTeamListController());
-  CsgoTeams({Key? key}) : super(key: key);
+class DotaTeams extends StatelessWidget {
+  final DotaTeamListController _teamListController =
+      Get.put(DotaTeamListController());
+  DotaTeams({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -63,10 +63,10 @@ class CsgoTeams extends StatelessWidget {
                             scrollDirection: Axis.vertical,
                             shrinkWrap: true,
                             itemCount:
-                                _teamListController.csgoTeamList.length,
+                                _teamListController.dotaTeamList.length,
                             itemBuilder: (BuildContext context, int index) {
-                              return CsgoTeamCard(
-                                  _teamListController.csgoTeamList[index]);
+                              return DotaTeamCard(
+                                  _teamListController.dotaTeamList[index]);
                             },
                           ),
                   ),

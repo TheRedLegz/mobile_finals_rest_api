@@ -8,10 +8,11 @@ class CsgoWeaponListController extends GetxController {
 
   void onInit() {
     super.onInit();
-    fetchDotaItemList();
+    fetchWeaponlist();
   }
 
-  void fetchDotaItemList() async {
+  void fetchWeaponlist() async {
+    isLoading.value = true;
     var responseBody = await TestService.fetchCsgoWeaponList();
     isLoading.value = false;
     csgoWeaponList.value = csgoWeaponDataListFromJson(responseBody);

@@ -4,6 +4,8 @@ import 'package:mobile_finals_rest_api/views/home/dota2/dota_heroes.dart';
 import 'package:mobile_finals_rest_api/views/home/dota2/dota_matches.dart';
 import 'package:mobile_finals_rest_api/views/home/dota2/dota_players.dart';
 
+import 'dota_teams.dart';
+
 class Dota2LandingPage extends StatelessWidget {
   const Dota2LandingPage({Key? key}) : super(key: key);
 
@@ -61,9 +63,11 @@ class Dota2LandingPage extends StatelessWidget {
             height: 50.0,
             width: 300,
             child: ElevatedButton(
-              onPressed: () {},
+              onPressed: () {
+                Get.to(() => DotaTeams());
+              },
               child: Text(
-                "View Items",
+                "View Teams",
                 style: TextStyle(color: Colors.red),
               ),
               style: ElevatedButton.styleFrom(
@@ -73,6 +77,22 @@ class Dota2LandingPage extends StatelessWidget {
             ),
           ),
           SizedBox(height: 20),
+          // Container(
+          //   height: 50.0,
+          //   width: 300,
+          //   child: ElevatedButton(
+          //     onPressed: () {},
+          //     child: Text(
+          //       "View Items",
+          //       style: TextStyle(color: Colors.red),
+          //     ),
+          //     style: ElevatedButton.styleFrom(
+          //         primary: Colors.grey[800],
+          //         textStyle:
+          //             TextStyle(fontSize: 15, fontWeight: FontWeight.bold)),
+          //   ),
+          // ),
+          // SizedBox(height: 20),
           Container(
             height: 50.0,
             width: 300,

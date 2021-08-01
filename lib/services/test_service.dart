@@ -27,6 +27,18 @@ class TestService {
         "https://api.pandascore.co/csgo/matches?token=TfBqN1OTQ1YYqN2DTsZovyJsY4uvp4kRwRESiHbdFiKRdgBaEcs"));
     return response.body;
   }
+
+  static Future<String> fetchCsgoTeamList() async {
+    var response = await http.get(Uri.parse(
+        "https://api.pandascore.co/csgo/teams?token=TfBqN1OTQ1YYqN2DTsZovyJsY4uvp4kRwRESiHbdFiKRdgBaEcs"));
+    return response.body;
+  }
+
+  static Future<String> fetchDotaTeamList() async {
+    var response = await http.get(Uri.parse(
+        "https://api.pandascore.co/dota2/teams?token=TfBqN1OTQ1YYqN2DTsZovyJsY4uvp4kRwRESiHbdFiKRdgBaEcs"));
+    return response.body;
+  }
   
   static Future<String> fetchDotaMatchList() async {
     var response = await http.get(Uri.parse(

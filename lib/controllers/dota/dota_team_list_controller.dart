@@ -2,8 +2,8 @@ import 'package:get/get.dart';
 import 'package:mobile_finals_rest_api/models/pandascore_models/team_data.dart';
 import 'package:mobile_finals_rest_api/services/test_service.dart';
 
-class CsgoTeamListController extends GetxController {
-  var csgoTeamList = [].obs;
+class DotaTeamListController extends GetxController {
+  var dotaTeamList = [].obs;
   RxBool isLoading = true.obs;
 
   void onInit() {
@@ -13,8 +13,8 @@ class CsgoTeamListController extends GetxController {
 
   void fetchTeamList() async {
     isLoading.value = true;
-    var responseBody = await TestService.fetchCsgoTeamList();
+    var responseBody = await TestService.fetchDotaTeamList();
     isLoading.value = false;
-    csgoTeamList.value = teamDataListFromJson(responseBody);
+    dotaTeamList.value = teamDataListFromJson(responseBody);
   }
 }
