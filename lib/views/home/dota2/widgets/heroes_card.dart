@@ -35,13 +35,7 @@ class DotaHeroesCard extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text(
-                  "Name: " + heroData.name,
-                  maxLines: 2,
-                  style: TextStyle(fontSize: 12, fontWeight: FontWeight.w800),
-                  overflow: TextOverflow.ellipsis,
-                ),
-                Text(
-                  "LocalName: " + heroData.localizedName,
+                  heroData.localizedName,
                   maxLines: 2,
                   style: TextStyle(fontSize: 12, fontWeight: FontWeight.w800),
                   overflow: TextOverflow.ellipsis,
