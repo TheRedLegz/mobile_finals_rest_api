@@ -5,6 +5,30 @@ class DotaMatchCard extends StatelessWidget {
   final DotaMatchData matchData;
   DotaMatchCard(this.matchData);
 
+  getStatus(String jsonStatus) {
+    switch(jsonStatus) {
+      case "canceled": {
+        return "Cancelled";
+      }
+      case "finished": {
+        return "Finished";
+      }
+      case "not_started": {
+        return "Not started";
+      }
+      case "postponed": {
+        return "Postponed";
+      }
+      case "running": {
+        return "Running";
+      }
+      default: {
+        return "Status Unavailable";
+      }
+
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     return Card(
@@ -47,7 +71,7 @@ class DotaMatchCard extends StatelessWidget {
                   overflow: TextOverflow.ellipsis,
                 ),
                 Text(
-                  "Status: " + matchData.status,
+                  "Status: " + getStatus(matchData.status),
                   maxLines: 2,
                   style: TextStyle(fontSize: 12, fontWeight: FontWeight.w800),
                   overflow: TextOverflow.ellipsis,

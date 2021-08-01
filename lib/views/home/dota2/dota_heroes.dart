@@ -51,11 +51,7 @@ class DotaHeroes extends StatelessWidget {
                   IconButton(
                     icon: Icon(Icons.refresh),
                     onPressed: () async {
-                      // User controller here
-                      var res = await TestService.fetchDotaHeroList();
-                      dotaHeroDataListFromJson(res).forEach((hero) {
-                        print(hero.name);
-                      });
+                      _heroListController.fetchDotaHeroList();
                     },
                   ),
                 ],

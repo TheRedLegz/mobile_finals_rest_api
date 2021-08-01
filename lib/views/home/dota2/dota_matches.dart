@@ -51,10 +51,7 @@ class DotaMatches extends StatelessWidget {
                     IconButton(
                       icon: Icon(Icons.refresh),
                       onPressed: () async {
-                        var res = await TestService.fetchDotaMatchList();
-                        dotaMatchDataFromJson(res).forEach((match) {
-                          print(match.name);
-                        });
+                        _matchListController.fetchMatchList();
                       },
                     ),
                   ],

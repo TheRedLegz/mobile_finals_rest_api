@@ -12,6 +12,7 @@ class DotaPlayerListController extends GetxController {
   }
 
   void fetchDotaPlayerList() async {
+    isLoading.value = true;
     var responseBody = await TestService.fetchDotaPlayerList();
     isLoading.value = false;
     csgoWeaponList.value = playerDataListFromJson(responseBody);

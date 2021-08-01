@@ -78,7 +78,7 @@ class CSGOLandingPage extends StatelessWidget {
             width: 300,
             child: ElevatedButton(
               onPressed: () {
-                //Get.to(()=> CsgoTeams());
+                Get.to(()=> CsgoTeams());
               },
               child: Text(
                 "View Teams",
