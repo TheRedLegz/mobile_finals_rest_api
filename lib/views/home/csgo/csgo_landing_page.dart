@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:mobile_finals_rest_api/views/home/csgo/csgo_matches.dart';
 import 'package:mobile_finals_rest_api/views/home/csgo/csgo_teams.dart';
+import 'package:mobile_finals_rest_api/views/home/csgo/csgo_weapons.dart';
 
 class CSGOLandingPage extends StatelessWidget {
   const CSGOLandingPage({Key? key}) : super(key: key);
@@ -94,7 +95,9 @@ class CSGOLandingPage extends StatelessWidget {
             height: 50.0,
             width: 300,
             child: ElevatedButton(
-              onPressed: () {},
+              onPressed: () {
+                Get.to(CSGOWeaponPage());
+              },
               child: Text(
                 "View Weapons",
                 style: TextStyle(color: Colors.amber),
