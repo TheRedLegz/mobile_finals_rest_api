@@ -3,7 +3,7 @@ import 'package:mobile_finals_rest_api/models/pandascore_models/player_data.dart
 import 'package:mobile_finals_rest_api/services/test_service.dart';
 
 class CsgoPlayerListController extends GetxController {
-  var csgoWeaponList = [].obs;
+  var csgoPlayerList = [].obs;
   RxBool isLoading = true.obs;
 
   void onInit() {
@@ -14,6 +14,6 @@ class CsgoPlayerListController extends GetxController {
   void fetchCsgoPlayerList() async {
     var responseBody = await TestService.fetchCsgoPlayerList();
     isLoading.value = false;
-    csgoWeaponList.value = playerDataListFromJson(responseBody);
+    csgoPlayerList.value = playerDataListFromJson(responseBody);
   }
 }
