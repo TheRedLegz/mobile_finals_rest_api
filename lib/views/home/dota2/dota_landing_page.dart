@@ -56,22 +56,22 @@ class Dota2LandingPage extends StatelessWidget {
             ),
           ),
           SizedBox(height: 20),
-          Container(
-            height: 50.0,
-            width: 300,
-            child: ElevatedButton(
-              onPressed: () {},
-              child: Text(
-                "View Items",
-                style: TextStyle(color: Colors.red),
-              ),
-              style: ElevatedButton.styleFrom(
-                  primary: Colors.grey[800],
-                  textStyle:
-                      TextStyle(fontSize: 15, fontWeight: FontWeight.bold)),
-            ),
-          ),
-          SizedBox(height: 20),
+          // Container(
+          //   height: 50.0,
+          //   width: 300,
+          //   child: ElevatedButton(
+          //     onPressed: () {},
+          //     child: Text(
+          //       "View Items",
+          //       style: TextStyle(color: Colors.red),
+          //     ),
+          //     style: ElevatedButton.styleFrom(
+          //         primary: Colors.grey[800],
+          //         textStyle:
+          //             TextStyle(fontSize: 15, fontWeight: FontWeight.bold)),
+          //   ),
+          // ),
+          // SizedBox(height: 20),
           Container(
             height: 50.0,
             width: 300,
