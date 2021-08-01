@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:mobile_finals_rest_api/controllers/dota/dota_player_list_controller.dart';
-import 'package:mobile_finals_rest_api/models/pandascore_models/player_data.dart';
-import 'package:mobile_finals_rest_api/services/test_service.dart';
 import 'package:mobile_finals_rest_api/views/home/dota2/widgets/players_card.dart';
 
 class DotaPlayers extends StatelessWidget {
@@ -52,10 +50,7 @@ class DotaPlayers extends StatelessWidget {
                     IconButton(
                       icon: Icon(Icons.refresh),
                       onPressed: () async {
-                        var res = await TestService.fetchDotaPlayerList();
-                        playerDataListFromJson(res).forEach((match) {
-                          print(match.name);
-                        });
+                        _playerListController.fetchDotaPlayerList();
                       },
                     ),
                   ],
