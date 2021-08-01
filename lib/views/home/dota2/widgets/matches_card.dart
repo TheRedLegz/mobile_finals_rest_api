@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:mobile_finals_rest_api/models/csgo_models/csgo_match_data.dart';
+import 'package:mobile_finals_rest_api/models/dota_models/dota_match_data.dart';
 
-class CsgoMatchCard extends StatelessWidget {
-  final CsgoMatchData matchData;
-  CsgoMatchCard(this.matchData);
+class DotaMatchCard extends StatelessWidget {
+  final DotaMatchData matchData;
+  DotaMatchCard(this.matchData);
 
   @override
   Widget build(BuildContext context) {
@@ -22,7 +22,7 @@ class CsgoMatchCard extends StatelessWidget {
                   height: 150,
                   width: double.infinity,
                   child: Image.asset(
-                    'images/csgo.png',
+                    'images/dota2.jpg',
                     fit: BoxFit.fill,
                   ),
                 ),
@@ -30,7 +30,7 @@ class CsgoMatchCard extends StatelessWidget {
                 Text(
                   matchData.name,
                   maxLines: 2,
-                  style: TextStyle(fontSize: 20, fontWeight: FontWeight.w800, color: Colors.amber),
+                  style: TextStyle(fontSize: 20, fontWeight: FontWeight.w800, color: Colors.red),
                   overflow: TextOverflow.ellipsis,
                 ),
               ],
