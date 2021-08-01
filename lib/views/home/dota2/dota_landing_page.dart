@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:mobile_finals_rest_api/views/home/dota2/dota_heroes.dart';
+import 'package:mobile_finals_rest_api/views/home/dota2/dota_matches.dart';
 
 class Dota2LandingPage extends StatelessWidget {
   const Dota2LandingPage({Key? key}) : super(key: key);
@@ -20,11 +21,12 @@ class Dota2LandingPage extends StatelessWidget {
       ),
       body: Column(
         children: [
-          Padding(
-            padding: const EdgeInsets.all(0.0),
-            child: Container(
-              height: 205,
-              child: Image.asset('images/dota.jpg'),
+          Container(
+            height: 220,
+            width: double.infinity,
+            child: Image.asset(
+              'images/dota.jpg',
+              fit: BoxFit.fill,
             ),
           ),
           SizedBox(height: 10),
@@ -41,17 +43,16 @@ class Dota2LandingPage extends StatelessWidget {
             width: 300,
             child: ElevatedButton(
               onPressed: () {
-                Get.to(DotaHeroes());
+                Get.to(() => DotaHeroes());
               },
               child: Text(
                 "View Heroes",
+                style: TextStyle(color: Colors.red),
               ),
               style: ElevatedButton.styleFrom(
                   primary: Colors.grey[800],
-                  textStyle: TextStyle(
-                      color: Colors.white,
-                      fontSize: 15,
-                      fontWeight: FontWeight.bold)),
+                  textStyle:
+                      TextStyle(fontSize: 15, fontWeight: FontWeight.bold)),
             ),
           ),
           SizedBox(height: 20),
@@ -62,13 +63,30 @@ class Dota2LandingPage extends StatelessWidget {
               onPressed: () {},
               child: Text(
                 "View Items",
+                style: TextStyle(color: Colors.red),
               ),
               style: ElevatedButton.styleFrom(
                   primary: Colors.grey[800],
-                  textStyle: TextStyle(
-                      color: Colors.white,
-                      fontSize: 15,
-                      fontWeight: FontWeight.bold)),
+                  textStyle:
+                      TextStyle(fontSize: 15, fontWeight: FontWeight.bold)),
+            ),
+          ),
+          SizedBox(height: 20),
+          Container(
+            height: 50.0,
+            width: 300,
+            child: ElevatedButton(
+              onPressed: () {
+                Get.to(() => DotaMatches());
+              },
+              child: Text(
+                "View Matches",
+                style: TextStyle(color: Colors.red),
+              ),
+              style: ElevatedButton.styleFrom(
+                  primary: Colors.grey[800],
+                  textStyle:
+                      TextStyle(fontSize: 15, fontWeight: FontWeight.bold)),
             ),
           ),
           SizedBox(height: 100),

@@ -17,26 +17,28 @@ class GameTile extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Stack(
-              children: [
-                ElevatedButton(
-                  style: ElevatedButton.styleFrom(
-                    primary: Colors.grey[900],
-                    onPrimary: Colors.yellow,
+            Expanded(
+              child: Stack(
+                children: [
+                  ElevatedButton(
+                    style: ElevatedButton.styleFrom(
+                      primary: Colors.grey[900],
+                      onPrimary: Colors.yellow,
+                    ),
+                    child: Container(
+                        height: 180,
+                        width: double.infinity,
+                        clipBehavior: Clip.antiAlias,
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(4),
+                        ),
+                        child: Image.asset(this.imagePath)),
+                    onPressed: () {
+                      Get.to(() => this.landingPage);
+                    },
                   ),
-                  child: Container(
-                      height: 180,
-                      width: double.infinity,
-                      clipBehavior: Clip.antiAlias,
-                      decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(4),
-                      ),
-                      child: Image.asset(this.imagePath)),
-                  onPressed: () {
-                    Get.to(this.landingPage);
-                  },
-                ),
-              ],
+                ],
+              ),
             ),
           ],
         ),

@@ -1,10 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:mobile_finals_rest_api/main.dart';
 import 'package:mobile_finals_rest_api/views/home/widgets/game_tile.dart';
-
 import 'csgo/csgo_landing_page.dart';
 import 'dota2/dota_landing_page.dart';
-// import 'package:get/get.dart';
 
 class HomeScreen extends StatelessWidget {
   @override

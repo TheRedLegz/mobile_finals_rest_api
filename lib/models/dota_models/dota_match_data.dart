@@ -1,12 +1,12 @@
 
 import 'dart:convert';
 
-List<CsgoMatchData> csgoMatchDataFromJson(String str) => List<CsgoMatchData>.from(json.decode(str).map((x) => CsgoMatchData.fromJson(x)));
+List<DotaMatchData> dotaMatchDataFromJson(String str) => List<DotaMatchData>.from(json.decode(str).map((x) => DotaMatchData.fromJson(x)));
 
-String csgoMatchDataToJson(List<CsgoMatchData> data) => json.encode(List<dynamic>.from(data.map((x) => x.toJson())));
+String dotaMatchDataToJson(List<DotaMatchData> data) => json.encode(List<dynamic>.from(data.map((x) => x.toJson())));
 
-class CsgoMatchData {
-    CsgoMatchData({
+class DotaMatchData {
+    DotaMatchData({
         required this.id,
         required this.name,
         required this.status,
@@ -18,7 +18,7 @@ class CsgoMatchData {
     dynamic status;
     dynamic startedAt;
 
-    factory CsgoMatchData.fromJson(Map<String, dynamic> json) => CsgoMatchData(
+    factory DotaMatchData.fromJson(Map<String, dynamic> json) => DotaMatchData(
         id: json["id"],
         name: json["name"],
         status: json["status"],

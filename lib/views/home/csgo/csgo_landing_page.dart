@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:mobile_finals_rest_api/views/home/dota2/dota_heroes.dart';
+import 'package:mobile_finals_rest_api/views/home/csgo/csgo_matches.dart';
+import 'package:mobile_finals_rest_api/views/home/csgo/csgo_teams.dart';
 
 class CSGOLandingPage extends StatelessWidget {
   const CSGOLandingPage({Key? key}) : super(key: key);
@@ -20,12 +21,12 @@ class CSGOLandingPage extends StatelessWidget {
       ),
       body: Column(
         children: [
-          Padding(
-            padding: const EdgeInsets.all(0.0),
-            child: Container(
-              alignment: Alignment.center,
-              height: 205,
-              child: Image.asset('images/csgo.jpg'),
+          Container(
+            height: 220,
+            width: double.infinity,
+            child: Image.asset(
+              'images/csgo.jpg',
+              fit: BoxFit.fill,
             ),
           ),
           SizedBox(height: 10),
@@ -41,16 +42,17 @@ class CSGOLandingPage extends StatelessWidget {
             height: 50.0,
             width: 300,
             child: ElevatedButton(
-              onPressed: () {},
+              onPressed: () {
+                Get.to(() => CsgoMatches());
+              },
               child: Text(
                 "View Matches",
+                style: TextStyle(color: Colors.amber),
               ),
               style: ElevatedButton.styleFrom(
                   primary: Colors.grey[800],
-                  textStyle: TextStyle(
-                      color: Colors.white,
-                      fontSize: 15,
-                      fontWeight: FontWeight.bold)),
+                  textStyle:
+                      TextStyle(fontSize: 15, fontWeight: FontWeight.bold)),
             ),
           ),
           SizedBox(height: 30),
@@ -61,13 +63,12 @@ class CSGOLandingPage extends StatelessWidget {
               onPressed: () {},
               child: Text(
                 "View Players",
+                style: TextStyle(color: Colors.amber),
               ),
               style: ElevatedButton.styleFrom(
                   primary: Colors.grey[800],
-                  textStyle: TextStyle(
-                      color: Colors.white,
-                      fontSize: 15,
-                      fontWeight: FontWeight.bold)),
+                  textStyle:
+                      TextStyle(fontSize: 15, fontWeight: FontWeight.bold)),
             ),
           ),
           SizedBox(height: 30),
@@ -75,16 +76,17 @@ class CSGOLandingPage extends StatelessWidget {
             height: 50.0,
             width: 300,
             child: ElevatedButton(
-              onPressed: () {},
+              onPressed: () {
+                //Get.to(()=> CsgoTeams());
+              },
               child: Text(
                 "View Teams",
+                style: TextStyle(color: Colors.amber),
               ),
               style: ElevatedButton.styleFrom(
                   primary: Colors.grey[800],
-                  textStyle: TextStyle(
-                      color: Colors.white,
-                      fontSize: 15,
-                      fontWeight: FontWeight.bold)),
+                  textStyle:
+                      TextStyle(fontSize: 15, fontWeight: FontWeight.bold)),
             ),
           ),
           SizedBox(height: 30),
@@ -95,13 +97,12 @@ class CSGOLandingPage extends StatelessWidget {
               onPressed: () {},
               child: Text(
                 "View Weapons",
+                style: TextStyle(color: Colors.amber),
               ),
               style: ElevatedButton.styleFrom(
                   primary: Colors.grey[800],
-                  textStyle: TextStyle(
-                      color: Colors.white,
-                      fontSize: 15,
-                      fontWeight: FontWeight.bold)),
+                  textStyle:
+                      TextStyle(fontSize: 15, fontWeight: FontWeight.bold)),
             ),
           ),
           SizedBox(height: 100),
