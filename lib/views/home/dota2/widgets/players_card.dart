@@ -22,7 +22,7 @@ class DotaPlayersCard extends StatelessWidget {
                   child: playerData.imageUrl != null
                       ? Image.network(playerData.imageUrl.toString())
                       : Image.asset(
-                          'images/csgo.png',
+                          'images/dota2.jpg',
                           fit: BoxFit.fill,
                         ),
                 ),
