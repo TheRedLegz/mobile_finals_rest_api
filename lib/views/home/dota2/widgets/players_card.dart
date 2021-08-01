@@ -17,16 +17,14 @@ class DotaPlayersCard extends StatelessWidget {
             Stack(
               children: [
                 Container(
-                  height: 180,
+                  height: 150,
                   width: double.infinity,
-                  clipBehavior: Clip.antiAlias,
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(4),
-                  ),
-                  child: Image.asset(
-                    'images/dota2.jpg',
-                    fit: BoxFit.fill,
-                  ),
+                  child: playerData.imageUrl != null
+                      ? Image.network(playerData.imageUrl.toString())
+                      : Image.asset(
+                          'images/csgo.png',
+                          fit: BoxFit.fill,
+                        ),
                 ),
               ],
             ),
@@ -36,12 +34,6 @@ class DotaPlayersCard extends StatelessWidget {
               children: [
                 Text(
                   "Name: " + playerData.name,
-                  maxLines: 2,
-                  style: TextStyle(fontSize: 12, fontWeight: FontWeight.w800),
-                  overflow: TextOverflow.ellipsis,
-                ),
-                Text(
-                  "Role: " + playerData.name,
                   maxLines: 2,
                   style: TextStyle(fontSize: 12, fontWeight: FontWeight.w800),
                   overflow: TextOverflow.ellipsis,

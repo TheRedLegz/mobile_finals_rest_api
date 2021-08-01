@@ -52,7 +52,7 @@ class CsgoPlayers extends StatelessWidget {
                     IconButton(
                       icon: Icon(Icons.refresh),
                       onPressed: () async {
-                        var res = await TestService.fetchDotaPlayerList();
+                        var res = await TestService.fetchCsgoPlayerList();
                         playerDataListFromJson(res).forEach((match) {
                           print(match.name);
                         });

@@ -17,16 +17,14 @@ class CsgoPlayersCard extends StatelessWidget {
             Stack(
               children: [
                 Container(
-                  height: 180,
+                  height: 150,
                   width: double.infinity,
-                  clipBehavior: Clip.antiAlias,
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(4),
-                  ),
-                  child: Image.asset(
-                    'images/csgo.jpg',
-                    fit: BoxFit.fill,
-                  ),
+                  child: csplayerData.imageUrl != null
+                      ? Image.network(csplayerData.imageUrl.toString())
+                      : Image.asset(
+                          'images/csgo.png',
+                          fit: BoxFit.fill,
+                        ),
                 ),
               ],
             ),
@@ -36,12 +34,6 @@ class CsgoPlayersCard extends StatelessWidget {
               children: [
                 Text(
                   "Name: " + csplayerData.name,
-                  maxLines: 2,
-                  style: TextStyle(fontSize: 12, fontWeight: FontWeight.w800),
-                  overflow: TextOverflow.ellipsis,
-                ),
-                Text(
-                  "Role: " + csplayerData.name,
                   maxLines: 2,
                   style: TextStyle(fontSize: 12, fontWeight: FontWeight.w800),
                   overflow: TextOverflow.ellipsis,

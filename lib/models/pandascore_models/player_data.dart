@@ -21,7 +21,7 @@ class PlayerData {
     // this.birthday,
     // NOTE: Keep track of this when team data calls this
     // this.currentTeam,
-    this.currentVideogame,
+    // this.currentVideogame,
     this.firstName,
     this.hometown,
     required this.id,
@@ -36,7 +36,7 @@ class PlayerData {
   // dynamic birthYear; // DateTime?
   // dynamic birthday; //DateTime?
   // CurrentTeam? currentTeam;
-  CurrentVideogame? currentVideogame;
+  // CurrentVideogame? currentVideogame;
   String? firstName;
   dynamic hometown; // String?
   int id;
@@ -51,7 +51,7 @@ class PlayerData {
         // birthYear: json["birth_year"],
         // birthday: json["birthday"],
         // currentTeam: CurrentTeam.fromJson(json["current_team"]),
-        currentVideogame: CurrentVideogame.fromJson(json["current_videogame"]),
+        // currentVideogame: CurrentVideogame.fromJson(json["current_videogame"]),
         firstName: json["first_name"],
         hometown: json["hometown"],
         id: json["id"],
@@ -67,7 +67,7 @@ class PlayerData {
         // "birth_year": birthYear,
         // "birthday": birthday,
         // "current_team": currentTeam?.toJson(),
-        "current_videogame": currentVideogame?.toJson(),
+        // "current_videogame": currentVideogame?.toJson(),
         "first_name": firstName,
         "hometown": hometown,
         "id": id,
